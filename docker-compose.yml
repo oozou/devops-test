@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+    depends_on:
+      - graphite
+    restart: always
+    environment:
+      STATSD_HOST: graphite
+      STATSD_PORT: 8125
+
+
+  graphite:
+    image: graphiteapp/graphite-statsd:1.1.8-5
+    volumes:
+      - graphite_data:/opt/graphite/storage
+    environment:
+      - GRAPHITE_DEBUG=true
+    ports:
+      - 80:80 #nginx
+      - 2003:2003 #carbon receiver - plaintext
+      - 2004:2004 #carbon receiver - pickle
+      - 2023:2023 #carbon - plaintext
+      - 2024:2024 #carbon - pickle
+      - 8080:8080 #Graphite internal gunicorn port 
+      - 8125:8125/udp #statsd
+      - 8126:8126 #statsd admin
+
+
+volumes:
+    graphite_data: {}

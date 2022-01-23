@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"PASS\" && exit 0"
+    "test": "echo \"PASS\" && exit 0",
+	"dev": "npm run test && node index.js",
+	"prod": "node index.js"
   },
   "author": "",
   "license": "UNLICENSED",
