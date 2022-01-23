@@ -1,0 +1,10 @@
+project_id = "projectid-xxxxx"
+credentials_file_path = "./service-account.json"
+service_account = "terraform-service-account@xxxxxxx"
+region = "asia-southeast1"
+main_zone = "asia-southeast1-b"
+cluster_node_zones = ["asia-southeast1-b"]
+master_ipv4_cidr_block   = "10.100.100.0/28"
+pods_ip_cidr_range     = "10.101.0.0/16"
+services_ip_cidr_range = "10.102.0.0/16"
+compute_ip_cidr_range = "10.10.0.0/16"

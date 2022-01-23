@@ -28,3 +28,23 @@ Project root has [`index.js`](/index.js) file. It simulates a simple app that ru
 Email us your Github repo. We expect meaningful git commits, ideally one commit per exercise with commit messages clearly communicating the intent.
 
 In case you deploy it to any cloud platforms, please send us instructions & relevant IAM user credentials.
+  
+
+## Work
+- Docker/Docker-compose
+- Terraform -> Setup GKE environment
+- kubernetes -> Deploy app in GKE
+
+## Docker
+### Build Image
+`docker build . -t app-test:1.0 `
+
+### Docker-compose - Dev Env
+docker-compose.yml compose two components:
+- app -> built from Dockerfile-dev
+- graphite -> graphite-statsd:1.1.8-5 (enable debug for dev env)
+
+`docker-compose up -d`
+
+## Terraform 
+See terraform/README.md
