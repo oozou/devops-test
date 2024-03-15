@@ -54,3 +54,11 @@ Node.js (node-pkg)
 
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 ```
+
+## Ex.2 Cloud Infrastructure Diagram
+
+![cloud-infrastructure-diagram.drawio.png](./img/cloud-infrastructure-diagram.drawio.png)
+
+Referances
+- https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/inspection-deployment-models-with-AWS-network-firewall-ra.pdf
+- https://aws.amazon.com/blogs/networking-and-content-delivery/deploy-centralized-traffic-filtering-using-aws-network-firewall/
