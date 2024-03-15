@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: hardened-node-application
+  namespace: hardened-node-application
+spec:
+  values:
+    nodeSelector:
+      node-pool: app-node-pool
+    replicas: 1
+    nameOverride: "hardened-node-application"
+    fullnameOverride: "hardened-node-application"
+    image:
+      repository: 590183995993.dkr.ecr.ap-southeast-1.amazonaws.com/dockers/hardened-node-application
+      tag: latest
+    container:
+      containerSecurityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        capabilities:
+          drop:
+            - ALL
+        runAsNonRoot: true
+        allowPrivilegeEscalation: false

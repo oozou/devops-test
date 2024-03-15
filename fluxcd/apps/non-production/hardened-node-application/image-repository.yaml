@@ -1,0 +1,9 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: hardened-node-application
+  namespace: hardened-node-application
+spec:
+  interval: 5m
+  provider: aws
+  image: 590183995993.dkr.ecr.ap-southeast-1.amazonaws.com/dockers/hardened-node-application

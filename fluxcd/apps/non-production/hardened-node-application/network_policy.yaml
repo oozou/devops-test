@@ -1,0 +1,33 @@
+apiVersion: cilium.io/v2
+kind: CiliumNetworkPolicy
+metadata:
+  name: hardened-node-application
+  namespace: hardened-node-application
+spec:
+  endpointSelector:
+    matchLabels:
+      app.kubernetes.io/instance: hardened-node-application
+  egress:
+    - toEndpoints:
+        - matchLabels:
+            io.kubernetes.pod.namespace: kube-system
+            k8s-app: kube-dns
+      toPorts:
+        - ports:
+            - port: "53"
+              protocol: UDP
+          rules:
+            dns:
+              - matchPattern: "*"
+    - toServices:
+        - k8sServiceSelector:
+            selector:
+              matchLabels:
+                app.kubernetes.io/instance: graphite
+            namespace: graphite
+      toPorts:
+        - ports:
+            - port: "8125"
+              protocol: UDP
+    - toEndpoints:
+        - {}

@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: graphite
+  namespace: graphite
+spec:
+  releaseName: graphite
+  targetNamespace: graphite
+  interval: 5m
+  chart:
+    spec:
+      version: "1.x"
+      chart: graphite
+      sourceRef:
+        kind: HelmRepository
+        name: graphite
+        namespace: flux-system
+      interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true

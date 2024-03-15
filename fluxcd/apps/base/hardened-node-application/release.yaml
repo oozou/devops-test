@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: hardened-node-application
+  namespace: hardened-node-application
+spec:
+  releaseName: hardened-node-application
+  targetNamespace: hardened-node-application
+  interval: 5m
+  chart:
+    spec:
+      version: "1.x"
+      chart: app
+      sourceRef:
+        kind: HelmRepository
+        name: helm-repo
+        namespace: flux-system
+      interval: 5m
+  install:
+    disableWait: true
+  upgrade:
+    disableWait: true

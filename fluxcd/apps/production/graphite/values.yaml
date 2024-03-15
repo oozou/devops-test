@@ -1,0 +1,12 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: graphite
+  namespace: graphite
+spec:
+  values:
+    persistence:
+      enabled: false
+    nodeSelector:
+      node-pool: app-node-pool
+    

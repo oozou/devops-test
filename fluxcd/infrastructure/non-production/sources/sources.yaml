@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: helm-repo
+  namespace: flux-system
+spec:
+  interval: 10m
+  type: "oci"
+  provider: aws
+  url: oci://590183995993.dkr.ecr.ap-southeast-1.amazonaws.com/charts
