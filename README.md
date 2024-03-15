@@ -62,3 +62,15 @@ Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
 Referances
 - https://d1.awsstatic.com/architecture-diagrams/ArchitectureDiagrams/inspection-deployment-models-with-AWS-network-firewall-ra.pdf
 - https://aws.amazon.com/blogs/networking-and-content-delivery/deploy-centralized-traffic-filtering-using-aws-network-firewall/
+
+## Ex.3 AWS Organizations
+
+![aws-organization.png](./img/aws-organization.png)
+
+## Ex.3 Graphite UI
+
+![graphite-ui.png](./img/graphite-ui.png)
+
+## Ex.3 Hubble UI
+
+![hubble-ui.png](./img/hubble-ui.png)
